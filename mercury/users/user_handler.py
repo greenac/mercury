@@ -85,7 +85,7 @@ class UserHandler:
     def save_property(self, user, property_name):
         if property_name == self.property_name.username:
             user.username = self.user_dict[property_name]
-        if property_name == self.property_name.password:
+        elif property_name == self.property_name.password:
             pw_handler = PasswordHandler(self.user_dict[property_name])
             user.password = pw_handler.hash()
         elif property_name == self.property_name.first_name:
